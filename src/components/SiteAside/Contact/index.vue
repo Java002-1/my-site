@@ -1,7 +1,7 @@
 <template>
   <ul class="contact-container">
     <li>
-      <a>
+      <a href="https://github.com/Java002-1" target="_blank">
         <div class="icon">
           <Icon type="github" />
         </div>
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Icon from '../Icon';
+import Icon from '@/components/Icon';
 import weChat from '@/assets/wechat.jpg';
 export default {
   components: {
@@ -64,8 +64,7 @@ export default {
 .contact-container {
   list-style: none;
   padding: 0;
-  margin: 0;
-  height: 100%;
+  margin: 20px 0;
   width: 100%;
   background-color: transparent;
   color: @gray;
@@ -83,7 +82,7 @@ export default {
   }
   a {
     cursor: pointer;
-    font-size: 5px;
+    font-size: 14px;
     margin: 20px;
     display: flex;
     align-content: center;
@@ -108,7 +107,8 @@ export default {
     left: 0;
     bottom: @itemHeight;
     transition: 0.3s;
-    background: black;
+
+    background: transparent;
     transform: scaleY(0);
     transform-origin: center bottom;
     img {

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Icon from '../Icon';
+import Icon from '@/components/Icon';
 import '@/style/global.less';
 export default {
   components: {
@@ -72,9 +72,9 @@ export default {
 <style lang="less" scoped>
 @import "~@/style/var.less";
 ul {
-  margin: 15px 0;
+  margin: 50px 0;
   padding: 0;
-  height: inherit;
+  // height: inherit;
   width: 100%;
   background: transparent;
   display: table;
@@ -82,9 +82,6 @@ ul {
 
 li {
   list-style: none;
-  // display: block;
-  // width: 100%;
-  // height: 20%;
   color: #ccc;
   a {
     cursor: pointer;
@@ -92,7 +89,6 @@ li {
     display: block;
     display: flex;
     align-items: center;
-    // text-align: center;
     height: 45px;
     .icon {
       width: 24px;

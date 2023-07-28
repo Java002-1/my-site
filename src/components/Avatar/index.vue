@@ -1,6 +1,6 @@
 <template>
   <img
-    class="avatar-img"
+    class="avatar-container"
     :src="url"
     :style="{
       width: size + 'px',
@@ -24,7 +24,7 @@ export default {
 </script>
 <!--加上scoped会给当前组件加一个类样式，保证每个组件都是一样的，防止元素命名冲突-->
 <style scoped>
-.avatar-img {
+.avatar-container {
   border-radius: 50%;
   object-fit: cover;
   display: block;

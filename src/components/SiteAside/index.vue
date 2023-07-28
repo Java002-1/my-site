@@ -1,42 +1,46 @@
 <template>
-  <div class="app">
-    <!-- <Avatar :url="img" :size="100" />
+  <div class="site-aside-container">
+    <Avatar
+      url="http://mdrs.yuanjin.tech/FgMwAPYq17So9nwVH44ltDHo7u3c"
+      :size="150"
+    />
+    <h1 class="title">小窝</h1>
     <Menu />
-    <div class="contact">
-      <Contact />
-    </div> -->
+    <Contact />
   </div>
 </template>
 
 <script>
-import logo from '@/assets/logo.png';
-// import Avatar from '../Avatar';
-// import Contact from '../Contact';
-// import Menu from '../Menu';
+import Avatar from '@/components/Avatar/index.vue';
+import Contact from './Contact';
+import Menu from './Menu';
 export default {
-  // components: {
-  //   // Avatar,
-  //   // Contact,
-  //   // Menu
-  // },
-  data () {
-    return {
-      img: logo
-    };
+  components: {
+    Avatar,
+    Contact,
+    Menu
   }
-
 }
 </script>
 
-<style scoped>
-* {
-  padding: 0;
-  margin: 0;
+<style scoped lang="less">
+@import "~@/style/var.less";
+
+.site-aside-container {
+  background: @dark;
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-.app {
-  background: black;
-  /* width: 300px; */
-  /* height: 100%; */
-  border: 1px solid red;
+.avatar-container {
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
 }
 </style>

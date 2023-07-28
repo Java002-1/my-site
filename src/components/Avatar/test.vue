@@ -1,5 +1,7 @@
 <template>
-  <Avatar :src="img" :size="100" />
+  <div class="test-container">
+    <Avatar :src="img" :size="150" />
+  </div>
 </template>
 
 <script>
