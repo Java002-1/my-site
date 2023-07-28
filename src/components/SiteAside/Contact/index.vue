@@ -26,7 +26,7 @@
         <span>24560075</span>
       </a>
       <div class="pop">
-        <img class="wechat" :src="weixin" alt="" />
+        <img class="wechat" :src="qq" alt="" />
       </div>
     </li>
     <li>
@@ -46,13 +46,15 @@
 <script>
 import Icon from '@/components/Icon';
 import weChat from '@/assets/wechat.jpg';
+import qq from '@/assets/qq.jpg';
 export default {
   components: {
     Icon
   },
   data () {
     return {
-      weixin: weChat
+      weixin: weChat,
+      qq: qq
     };
   }
 
@@ -89,7 +91,7 @@ export default {
     color: #ccc;
     text-decoration: none;
     &:hover {
-      color: #00bbff;
+      color: #fff;
     }
   }
   .icon {

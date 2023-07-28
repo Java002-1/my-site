@@ -27,6 +27,7 @@ export default {
   width: 1000px;
   height: 600px;
   border: 2px solid;
+  margin: 0 auto;
 }
 .left {
   width: 200px;

@@ -1,14 +1,22 @@
 <template>
-  <div id="app">
-    <Pager :total="105" :current="current" @pageChange="handlePageChange" />
+  <div class="app-container">
+    <Layout>
+      <template #left>
+        <SiteAside />
+      </template>
+      <template #default> 中间主区域 </template>
+    </Layout>
   </div>
 </template>
 
 <script>
-import Pager from './components/Pager';
+// import Pager from './components/Pager';
+import Layout from './components/Layout';
+import SiteAside from './components/SiteAside';
 export default {
   components: {
-    Pager
+    Layout,
+    SiteAside
   },
   data () {
     return {
@@ -24,8 +32,10 @@ export default {
 }
 </script>
 
-<style scoped>
-.iconfont {
-  font-size: 200px;
+<style scoped lang="less">
+@import "~@/style/mixin.less";
+.app-container {
+  .self-fill();
+  // background: red;
 }
 </style>
