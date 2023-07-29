@@ -4,7 +4,9 @@
       <template #left>
         <SiteAside />
       </template>
-      <template #default> 中间主区域 </template>
+      <template #default>
+        <router-view></router-view>
+      </template>
     </Layout>
   </div>
 </template>

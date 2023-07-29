@@ -2,12 +2,16 @@
   <!-- <div> -->
   <ul class="menu-container">
     <li v-for="item in items" :key="item.link">
-      <a :class="{ selected: isSelected(item) }" :href="item.link"
+      <router-link
+        :exact="item.exact"
+        :to="item.link"
+        active-class="selected"
+        exact-active-class=""
         ><div class="icon">
           <Icon :type="item.icon" />
         </div>
         <span>{{ item.title }}</span>
-      </a>
+      </router-link>
     </li>
   </ul>
 
@@ -28,44 +32,32 @@ export default {
           link: "/",
           title: "首页",
           icon: "home",
-          selected: true
+          exact: true
         }, {
           link: "/blog",
           title: "文章",
           icon: "blog",
-          selected: false,
-          startWith: true
+          exact: false,
         },
         {
           link: "/about",
           title: "关于我",
           icon: "about",
-          selected: false
+          exact: true
         }, {
           link: "/project",
           title: "项目&效果",
           icon: "code",
-          selected: false
+          exact: true
         }, {
           link: "/message",
           title: "留言板",
           icon: "chat",
-          selected: false
+          exact: true
         }
       ]
     };
-  },
-  methods: {
-    isSelected (path) {
-      const link = path.link.toLowerCase();
-      const local = location.pathname.toLowerCase();
-      if (path.startWith) {
-        return local.startsWith(link);
-      }
-      return link === local;
-    }
   }
-
 }
 </script>
 
