@@ -5,8 +5,7 @@ import './style/global.less';
 import router from './router';
 import showMessage from './utils/showMessage';
 
-
-window.showMessage = showMessage;
+Vue.prototype.$showMessage = showMessage;
 
 // showMessage("4564879", "success");
 new Vue({

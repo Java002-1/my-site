@@ -6,12 +6,18 @@
 </template>
 
 <script>
-import { showMessage } from '@/utils';
 export default {
   methods: {
     handlerClick () {
-      console.log("123");
-      showMessage("123", "success", 2000, this.$refs.home);
+      this.$showMessage({
+        content: "123",
+        type: "success",
+        duration: 2000,
+        container: this.$refs.home,
+        callback: () => {
+          console.log("123");
+        }
+      });
     }
   }
 }

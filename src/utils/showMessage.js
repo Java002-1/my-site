@@ -9,7 +9,12 @@ import style from './showMessage.module.less';
  * @param {Number} duration 显示时长(ms)
  * @param {HTMLElement} container 容器(在传入的容器中显示消息)
  */
-export default function (content, type = "info", duration = 2000, container) {
+export default function (option = {}) {
+  const content = option.content || '';
+  const type = option.type || 'info';
+  const duration = option.duration || 2000;
+  const container = option.container || document.body;
+
   var div = document.createElement("div");
   const icon = getComponentsRootDom(Icon, {
     type
@@ -20,26 +25,21 @@ export default function (content, type = "info", duration = 2000, container) {
 
   div.className = `${style.message} ${style[`message-${type}`]}`;
 
-  if (!container) {
-    container = document.body;
-  } else {
-    if (getComputedStyle(container).position === "static") {
-      container.style.position = 'relative';
-    }
-
+  if (getComputedStyle(container).position === "static") {
+    container.style.position = 'relative';
   }
   container.appendChild(div);
   div.clientHeight; //强行渲染reflow
 
   div.style.opacity = 1;
   div.style.transform = `translate(-50%, -50%)`;
-  // console.log(duration);
 
   setTimeout(() => {
     div.style.opacity = 0;
     div.style.transform = `translate(-50%, -50%) translateY(-25px)`;
     div.addEventListener('transitionend', function () {
       div.remove();
+      option.callback && option.callback();
     }, { once: true });
   }, duration);
 }
