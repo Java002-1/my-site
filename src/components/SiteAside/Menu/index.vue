@@ -1,13 +1,14 @@
 <template>
   <!-- <div> -->
   <ul class="menu-container">
-    <li v-for="item in items" :key="item.link">
+    <li v-for="item in items" :key="item.name">
       <router-link
         :exact="item.exact"
-        :to="item.link"
+        :to="{ name: item.name }"
         active-class="selected"
         exact-active-class=""
-        ><div class="icon">
+      >
+        <div class="icon">
           <Icon :type="item.icon" />
         </div>
         <span>{{ item.title }}</span>
@@ -29,28 +30,28 @@ export default {
     return {
       items: [
         {
-          link: "/",
+          name: "Home",
           title: "首页",
           icon: "home",
           exact: true
         }, {
-          link: "/blog",
+          name: "Blog",
           title: "文章",
           icon: "blog",
           exact: false,
         },
         {
-          link: "/about",
+          name: "About",
           title: "关于我",
           icon: "about",
           exact: true
         }, {
-          link: "/project",
+          name: "Project",
           title: "项目&效果",
           icon: "code",
           exact: true
         }, {
-          link: "/message",
+          name: "Message",
           title: "留言板",
           icon: "chat",
           exact: true
