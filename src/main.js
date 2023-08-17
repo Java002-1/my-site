@@ -1,4 +1,5 @@
 //入口文件
+import './mock';
 import Vue from 'vue';
 import App from './App.vue';
 import './style/global.less';
@@ -7,7 +8,8 @@ import showMessage from './utils/showMessage';
 
 Vue.prototype.$showMessage = showMessage;
 
-// showMessage("4564879", "success");
+import './api/banner';
+
 new Vue({
   router,
   render: h => h(App),

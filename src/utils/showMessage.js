@@ -25,8 +25,10 @@ export default function (option = {}) {
 
   div.className = `${style.message} ${style[`message-${type}`]}`;
 
-  if (getComputedStyle(container).position === "static") {
-    container.style.position = 'relative';
+  if (option.container) {
+    if (getComputedStyle(container).position === "static") {
+      container.style.position = 'relative';
+    }
   }
   container.appendChild(div);
   div.clientHeight; //强行渲染reflow
